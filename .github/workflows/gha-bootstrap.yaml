@@ -12,10 +12,10 @@ jobs:
     name: "Update GitHub Actions"
     runs-on: ubuntu-latest
     permissions:
-      # IMPORTANT: mandatory to raise the PR
+      # IMPORTANT: mandatory to update content/actions
+      actions: write
       id-token: write
       pull-requests: write
-      repository-projects: write
       contents: write
 
     env:
