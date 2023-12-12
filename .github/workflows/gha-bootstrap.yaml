@@ -21,7 +21,7 @@ jobs:
       - name: "Checkout primary repository"
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ACTIONS_WORKFLOW }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Pull workflows from central repository"
         uses: actions/checkout@v4
@@ -31,6 +31,9 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Update repository workflows and create PR"
+        with:
+          token: ${{ secrets.ACTIONS_WORKFLOW }}
+
         run: |
           git checkout -b "update-gha-workflows"
           ls -al
