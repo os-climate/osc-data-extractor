@@ -42,7 +42,7 @@ jobs:
           ls -al .github/*
           git add .github
           git commit -m "Chore: Source/update GHA from shared repository"
-          git push --set-upstream origin "feature"
+          git push --set-upstream origin "update-gha-workflows"
           # This authenticates with GITHUB_TOKEN, using the scopes
           # set in jobs.changewf.permissions
-          gh pr create --title "Update workflow" --body ''
+          gh pr create --title "Update actions/workflows" --body ''
