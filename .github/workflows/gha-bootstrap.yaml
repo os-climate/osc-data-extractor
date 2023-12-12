@@ -1,0 +1,37 @@
+---
+name: "📦 Update/Source GitHub Actions"
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * MON"
+
+jobs:
+  update-actions:
+    name: "Update GitHub Actions"
+    runs-on: ubuntu-latest
+    permissions:
+      # IMPORTANT: mandatory to raise the PR
+      id-token: write
+      pull-requests: write
+      repository-projects: write
+      contents: write
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: 'os-climate/github'
+          path: 'github'
+      - run: |
+          cp -R github/*  .github
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .github
+          git commit -m "Chore: Source/update GHA from shared repository"
+          git push
