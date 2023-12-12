@@ -32,6 +32,8 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Update repository workflows and create PR"
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git checkout -b "update-gha-workflows"
           ls -al
