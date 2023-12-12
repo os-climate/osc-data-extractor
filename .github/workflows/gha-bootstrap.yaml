@@ -23,11 +23,15 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_WORKFLOW }}
 
-      - name: "Update workflows from central repository"
+      - name: "Pull workflows from central repository"
       - uses: actions/checkout@v4
         with:
           repository: "os-climate/github"
           path: "github"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Update repository workflows and create PR"
+        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           git checkout -b "update-gha-workflows"
