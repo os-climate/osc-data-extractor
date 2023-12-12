@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: "Checkout primary repository"
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_WORKFLOW }}
 
       - name: "Pull workflows from central repository"
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           repository: "os-climate/github"
           path: "github"
