@@ -29,8 +29,9 @@ jobs:
           repository: 'os-climate/github'
           path: 'github'
       - run: |
-          ls -l
-          cp -R github/* ${GITHUB_REPOSITORY#*/}/.github
+          ls -al
+          ls -al github/*
+          cp -R github/* .github
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .github
