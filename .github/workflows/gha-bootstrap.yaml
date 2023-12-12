@@ -23,14 +23,11 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
-      - name: "Clone central workflow repository"
+      - name: "Update workflows from central repository"
       - uses: actions/checkout@v4
         with:
           repository: 'os-climate/github'
           path: 'github'
-
-      - name: Make change to workflow file
-        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           git checkout -b "update-gha-workflows"
