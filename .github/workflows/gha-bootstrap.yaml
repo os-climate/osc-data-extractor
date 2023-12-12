@@ -14,25 +14,33 @@ jobs:
     permissions:
       # IMPORTANT: mandatory to update content/actions
       actions: write
-      id-token: write
       pull-requests: write
-      contents: write
-
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # contents: write
 
     steps:
+      - name: "Checkout primary (this) repository"
       - uses: actions/checkout@v4
 
+      - name: "Clone central workflow repository"
       - uses: actions/checkout@v4
         with:
           repository: 'os-climate/github'
           path: 'github'
+
+      - name: Make change to workflow file
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-          ls -l
-          cp -R github/* ${GITHUB_REPOSITORY#*/}/.github
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git checkout -b "update-gha-workflows"
+          ls -al
+          ls -al github/*
+          cp -R github/* .github
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ls -al .github/*
           git add .github
           git commit -m "Chore: Source/update GHA from shared repository"
-          git push
+          git push --set-upstream origin "feature"
+          # This authenticates with GITHUB_TOKEN, using the scopes
+          # set in jobs.changewf.permissions
+          gh pr create --title "Update workflow" --body ''
