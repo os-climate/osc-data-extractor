@@ -1,5 +1,5 @@
 ---
-name: "♻️ Update Shared GitHub Actions"
+name: "♻️ Update shared GitHub Actions"
 
 # yamllint disable-line rule:truthy
 on:
@@ -21,15 +21,15 @@ jobs:
       - name: "Checkout primary repository"
         uses: actions/checkout@v4
         with:
-          # token: ${{ secrets.ACTIONS_WORKFLOW }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTIONS_WORKFLOW }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Pull workflows from central repository"
         uses: actions/checkout@v4
         with:
           repository: "os-climate/github"
           path: "github"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Update repository workflows and create PR"
         env:
