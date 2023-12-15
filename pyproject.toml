@@ -2,11 +2,6 @@
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-[tool.setuptools_scm]
-# For smarter version schemes and other configuration options,
-# check out https://github.com/pypa/setuptools_scm
-version_scheme = "no-guess-dev"
-
 [project]
 name = "osc-data-extractor"
 version = "0.1.0"
@@ -15,9 +10,9 @@ authors = [
     {name = "David Besslich",email = "72577720+MichaelTiemannOSC@users.noreply.github.com"},
     {name = "David Besslich",email = "mwatkins@linuxfoundation.org"},
 ]
-dependencies = [
-    "setuptools>=69.0.2",
+dev-dependencies = [
+    "pdm",
 ]
 requires-python = ">=3.9"
-readme = "README.md"
+readme = "README.rst"
 license = {text = "Apache-2.0"}
