@@ -1,4 +1,5 @@
 # Temporary and binary files
+.pdm-python
 node_modules/
 *~
 *.py[cod]
