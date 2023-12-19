@@ -28,7 +28,7 @@ from osc_data_extractor import __version__
 
 __author__ = "Matthew Watkins"
 __copyright__ = "Matthew Watkins"
-__license__ = "Apache-2.0"
+__license__ = "MIT"
 
 _logger = logging.getLogger(__name__)
 
