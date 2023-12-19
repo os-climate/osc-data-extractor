@@ -45,7 +45,7 @@ jobs:
               fi
           done
           cp .devops/.github/* .github
-          cp .devops/.github/workflows* .github/workflows
+          cp .devops/.github/workflows/* .github/workflows
           cp .devops/scripts/* scripts
           cp .devops/.pre-commit-config.yaml .pre-commit-config.yaml
           cp .devops/.prettierignore .prettierignore
