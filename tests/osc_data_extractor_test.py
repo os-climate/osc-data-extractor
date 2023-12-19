@@ -4,7 +4,7 @@ from osc_data_extractor.skeleton import fib, main
 
 __author__ = "Matthew Watkins"
 __copyright__ = "Matthew Watkins"
-__license__ = "Apache-2.0"
+__license__ = "MIT"
 
 
 def test_fib():
