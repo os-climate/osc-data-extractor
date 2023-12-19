@@ -1,6 +1,0 @@
-[submodule ".github"]
-	path = .github
-	url = git@github.com:os-climate/github.git
-[submodule "github"]
-	path = github
-	url = git@github.com:os-climate/github.git
