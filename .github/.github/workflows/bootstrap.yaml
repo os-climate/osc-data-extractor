@@ -48,11 +48,6 @@ jobs:
           cp .devops/scripts/* scripts
           cp .devops/.pre-commit-config.yaml .pre-commit-config.yaml
           cp .devops/.prettierignore .prettierignore
-          cp .devops/.gitignore .gitignore 
-          cp -R .devops/.github .github
-          cp .devops/scripts/* scripts
-          cp .devops/.pre-commit-config.yaml .pre-commit-config.yaml
-          cp .devops/.prettierignore .prettierignore
           cp .devops/.gitignore .gitignore
           git add .
           git commit -m "Chore: Update DevOps tooling from central repository"
