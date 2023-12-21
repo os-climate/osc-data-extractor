@@ -52,12 +52,6 @@ jobs:
           for FILE in ${FILES}; do
               cp .devops/"$FILE" "$FILE"
           done
-          cp -a .devops/.github/. .github
-          cp .devops/.github/workflows/* .github/workflows
-          cp .devops/scripts/* scripts
-          cp .devops/.pre-commit-config.yaml .pre-commit-config.yaml
-          cp .devops/.prettierignore .prettierignore
-          cp .devops/.gitignore .gitignore
           git add .
           git commit -m "Chore: Update DevOps tooling from central repository"
           git push --set-upstream origin update-devops-tooling
