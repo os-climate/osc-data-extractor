@@ -25,6 +25,10 @@ classifiers = [
   "Topic :: Scientific/Engineering",
   "Topic :: Software Development",
 ]
+dependencies = [
+    "pint>=0.23",
+    "tables>=3.9.2",
+]
 
 [project.urls]
 Homepage = "https://github.com/os-climate/osc-data-extraction"
