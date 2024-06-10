@@ -1,0 +1,21 @@
+osc\_data\_extractor package
+============================
+
+Submodules
+----------
+
+osc\_data\_extractor.skeleton module
+------------------------------------
+
+.. automodule:: osc_data_extractor.skeleton
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: osc_data_extractor
+   :members:
+   :undoc-members:
+   :show-inheritance:
