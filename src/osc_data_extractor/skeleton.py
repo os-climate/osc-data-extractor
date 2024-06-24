@@ -1,10 +1,11 @@
 """
-This is a skeleton file that can serve as a starting point for a Python
-console script. To run this script uncomment the following lines in the
+Sample file as starting point for a Python console script.
+
+To run this script uncomment the following lines in the
 ``[options.entry_points]`` section in ``setup.cfg``::
 
     console_scripts =
-         fibonacci = osc_data_extractor.skeleton:run
+         fibonacci = osc-data-extractor.skeleton:run
 
 Then run ``pip install .`` (or ``pip install -e .`` for editable mode)
 which will install the command ``fibonacci`` inside your current environment.
@@ -20,15 +21,18 @@ References:
     - https://pip.pypa.io/en/stable/reference/pip_install
 """
 
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2024 The Linux Foundation <matthew.watkins@linuxfoundation.org>
+
 import argparse
 import logging
 import sys
 
 from osc_data_extractor import __version__
 
-__author__ = "Matthew Watkins"
-__copyright__ = "Matthew Watkins"
-__license__ = "MIT"
+__author__ = "github-actions[bot]"
+__copyright__ = "github-actions[bot]"
+__license__ = "Apache-2.0"
 
 _logger = logging.getLogger(__name__)
 
@@ -36,12 +40,12 @@ _logger = logging.getLogger(__name__)
 # ---- Python API ----
 # The functions defined in this section can be imported by users in their
 # Python scripts/interactive interpreter, e.g. via
-# `from osc_data_extractor.skeleton import fib`,
+# `from osc-data-extractor.skeleton import fib`,
 # when using this Python module as a library.
 
 
 def fib(n):
-    """Fibonacci example function
+    """Fibonacci example function.
 
     Args:
       n (int): integer
@@ -63,7 +67,7 @@ def fib(n):
 
 
 def parse_args(args):
-    """Parse command line parameters
+    """Parse command line parameters.
 
     Args:
       args (List[str]): command line parameters as list of strings
@@ -76,7 +80,7 @@ def parse_args(args):
     parser.add_argument(
         "--version",
         action="version",
-        version=f"osc-data-extractor {__version__}",
+        version=f"osc-physrisk-financial {__version__}",
     )
     parser.add_argument(dest="n", help="n-th Fibonacci number", type=int, metavar="INT")
     parser.add_argument(
@@ -99,17 +103,19 @@ def parse_args(args):
 
 
 def setup_logging(loglevel):
-    """Setup basic logging
+    """Set up basic logging.
 
     Args:
       loglevel (int): minimum loglevel for emitting messages
     """
     logformat = "[%(asctime)s] %(levelname)s:%(name)s:%(message)s"
-    logging.basicConfig(level=loglevel, stream=sys.stdout, format=logformat, datefmt="%Y-%m-%d %H:%M:%S")
+    logging.basicConfig(
+        level=loglevel, stream=sys.stdout, format=logformat, datefmt="%Y-%m-%d %H:%M:%S"
+    )
 
 
 def main(args):
-    """Wrapper allowing :func:`fib` to be called with string arguments in a CLI fashion
+    """Allow :func:`fib` to be called with string arguments.
 
     Instead of returning the value from :func:`fib`, it prints the result to the
     ``stdout`` in a nicely formatted message.
@@ -126,9 +132,9 @@ def main(args):
 
 
 def run():
-    """Calls :func:`main` passing the CLI arguments extracted from :obj:`sys.argv`
+    """Create console script entry point with setuptools.
 
-    This function can be used as entry point to create console scripts with setuptools.
+    Calls :func:`main` passing the CLI arguments extracted from :obj:`sys.argv`
     """
     main(sys.argv[1:])
 
@@ -142,6 +148,6 @@ if __name__ == "__main__":
     # After installing your project with pip, users can also run your Python
     # modules as scripts via the ``-m`` flag, as defined in PEP 338::
     #
-    #     python -m osc_data_extractor.skeleton 42
+    #     python -m osc-data-extractor.skeleton 42
     #
     run()
