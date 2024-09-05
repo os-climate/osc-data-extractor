@@ -107,10 +107,8 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        files: ^(scripts|tests|custom_components)/.+\.py$
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
-        files: ^(scripts|tests|custom_components)/.+\.py$
 
   - repo: local
     hooks:
