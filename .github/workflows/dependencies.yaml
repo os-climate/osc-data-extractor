@@ -34,7 +34,7 @@ jobs:
           python-version: ${{ env.default-python }}
 
       - name: "Update Python dependencies"
-        uses: pdm-project/update-deps-action@v1.9
+        uses: pdm-project/update-deps-action@v1.10
         with:
           sign-off-commit: "true"
           token: ${{ secrets.GH_TOKEN }}
